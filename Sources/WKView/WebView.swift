@@ -67,40 +67,6 @@ public struct WebView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                Spacer()
-            }
-            
-            ToolbarItem(placement: .bottomBar) {
-                HStack(spacing: 16) {
-                    Button {
-                        if self.webViewStateModel.canGoBack {
-                            self.webViewStateModel.goBack.toggle()
-                        }
-                    } label: {
-                        goBackImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }
-                    
-                    Button {
-                        if self.webViewStateModel.canGoForward {
-                            self.webViewStateModel.goForward.toggle()
-                        }
-                    } label: {
-                        goForwardImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }
-                    
-                    Spacer()
-                }
-                .accentColor(tintColor)
-            }
-        }
         .navigationBarItems(
             leading:
                 Button {
