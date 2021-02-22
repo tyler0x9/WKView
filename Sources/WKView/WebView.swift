@@ -46,7 +46,7 @@ public struct WebView: View {
         self.goForwardImage = goForwardImage
         self.goBackImage = goBackImage
         
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(titleColor)]
+        //UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(titleColor)]
         
         self.title = title
         
@@ -66,32 +66,32 @@ public struct WebView: View {
             WebPresenterView(url: URL.init(string: url)!, webViewStateModel: webViewStateModel, title: title, onNavigationAction: onNavigationAction, allowedHosts: allowedHosts, forbiddenHosts: forbiddenHosts, credential: credential)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
-        .navigationBarItems(
-            leading:
-                Button {
-                    if !hidesBackButton {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                } label: {
-                    if !hidesBackButton {
-                        backText
-                    } else {
-                        Spacer()
-                    }
-                }
-                .accentColor(tintColor)
-            , trailing:
-                Button {
-                    self.webViewStateModel.reload.toggle()
-                } label: {
-                    reloadImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                }
-                .accentColor(tintColor)
-        )
+//         .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
+//         .navigationBarItems(
+//             leading:
+//                 Button {
+//                     if !hidesBackButton {
+//                         self.presentationMode.wrappedValue.dismiss()
+//                     }
+//                 } label: {
+//                     if !hidesBackButton {
+//                         backText
+//                     } else {
+//                         Spacer()
+//                     }
+//                 }
+//                 .accentColor(tintColor)
+//             , trailing:
+//                 Button {
+//                     self.webViewStateModel.reload.toggle()
+//                 } label: {
+//                     reloadImage
+//                         .resizable()
+//                         .aspectRatio(contentMode: .fit)
+//                         .frame(width: 20, height: 20)
+//                 }
+//                 .accentColor(tintColor)
+//         )
         
     }
 }
