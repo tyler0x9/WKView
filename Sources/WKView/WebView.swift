@@ -66,6 +66,7 @@ public struct WebView: View {
             WebPresenterView(url: URL.init(string: url)!, webViewStateModel: webViewStateModel, title: title, onNavigationAction: onNavigationAction, allowedHosts: allowedHosts, forbiddenHosts: forbiddenHosts, credential: credential)
         }
         .navigationBarBackButtonHidden(true)
+        
 //         .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
 //         .navigationBarItems(
 //             leading:
